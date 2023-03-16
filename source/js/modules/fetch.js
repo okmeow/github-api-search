@@ -20,7 +20,7 @@ async function getRepositories(queryString) {
   const results = await Promise.all(jobs);
   const firstTenResults = results[0].items.slice(0, 10)
 
-  // Дальнейшая логика по построению списка должна быть в отдельном блоке, но на данный момент я не понимаю, как ее вынести.
+  // Дальнейшая логика по построению списка должна быть в отдельном блоке
 
   const resultsListElement = document.querySelector('.results__list');
 
@@ -29,6 +29,10 @@ async function getRepositories(queryString) {
     itemElement.innerHTML = `<a href=${firstTenResults[i].html_url} target="_blank">${firstTenResults[i].name}</a>
                             <p>${firstTenResults[i].description}</p>`;
     resultsListElement.appendChild(itemElement);
+  }
+
+  if (!document.querySelector('li')) {
+    alert('Ничего не найдено');
   }
 
   return firstTenResults;
