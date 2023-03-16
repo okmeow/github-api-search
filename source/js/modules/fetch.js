@@ -17,11 +17,12 @@ async function getRepositories(queryString) {
   jobs.push(job);
 
 
-  let results = await Promise.all(jobs);
+  const results = await Promise.all(jobs);
+  const firstTenResults = results[0].items.slice(0, 10)
 
-  console.log(results[0].items.slice(0, 10));
+  console.log(firstTenResults);
 
-  return results;
+  return firstTenResults;
 };
 
 export {getRepositories};
