@@ -4,9 +4,11 @@ import {isEnterKey} from '../utils/utils.js';
 const inputElement = document.querySelector('.search__field');
 const buttonElement = document.querySelector('.search__button');
 const errorMessageElement = document.querySelector('.search__error-message');
+const resultsListElement = document.querySelector('.results__list');
 
 const startSearch = () => {
   if (inputElement.value.length > 1) {
+    resultsListElement.textContent ='';
     getRepositories(inputElement.value);
     inputElement.classList.remove('search__field--error');
   } else {
