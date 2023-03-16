@@ -1,0 +1,25 @@
+.results {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.results a {
+  color: #0007d2;
+
+  &:hover {
+    color: #252cff;
+  }
+
+  &:active {
+    color: #000368;
+  }
+}
+
+.results ul {
+  list-style-type: none;
+}
+
+.results li {
+  margin-bottom: 30px;
+  border-bottom: 1px solid grey;
+}
